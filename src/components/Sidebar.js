@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState, useEffect } from "react";
 
 export default function Sidebar(props) {
     const noteElements = props.notes.map((note, index) => (
+
         <div key={note.id}>
             <div
                 
@@ -10,7 +11,7 @@ export default function Sidebar(props) {
                 }`}
                 onClick={() => props.setCurrentNoteId(note.id)}
             >
-                <h4 className="text-snippet">Note {index + 1}</h4>
+                <h4 className="text-snippet">{note.body.split("\n")[0]}</h4>
             </div>
         </div>
     ))
